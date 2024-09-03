@@ -27,6 +27,7 @@ export const GET = async (req, { params }) => {
 };
 
 //Updating a specific ID
+export const PUT = async (req, { params }) => {
   //Todo get the body when "update" is pressed and read the values
   const { id } = params;
   const { name, quantity, description, category } = await req.json();
