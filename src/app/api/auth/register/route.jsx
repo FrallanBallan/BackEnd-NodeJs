@@ -28,9 +28,9 @@ export const POST = async (req, options) => {
       name,
     },
   });
-
+  //This might need to be implemented in post. cant post with middleware
   const token = await jwt.signJWT({ userId: user.id, email: user.email });
-
+  // const token = await jwt.signJWT({user: user.id})
   return NextResponse.json({
     token,
     user,

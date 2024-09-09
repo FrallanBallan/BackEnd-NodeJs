@@ -50,13 +50,13 @@ export const GET = async (req) => {
 //Post an ITEM to the ITEM LIST DB
 export const POST = async (req) => {
   let body;
-
+  // console.log(body);
   try {
     //Getting the specs for the new item added
     body = await req.json();
     console.log("body", body);
   } catch (error) {
-    return NextResponse(
+    return NextResponse.json(
       {
         message: "Invalid JSON",
       },
@@ -65,22 +65,21 @@ export const POST = async (req) => {
       }
     );
   }
-  //TODO VALIDERINGS FUNCTION
-  //________________________
 
-  //   TRY TO POST THE NEW ITEM TO PRISMA AND DB
+  //TODO VALIDERINGS FUNCTION
 
   try {
     const newItem = await prisma.item.create({
       data: {
         name: body.name,
         quantity: Number(body.quantity),
-        inStock: body.inStock,
+        inStock: Number(body.quantity) > 0,
         category: body.category,
         description: body.description,
       },
     });
     console.log(newItem);
+
     return NextResponse.json({ newItem });
   } catch (error) {
     return NextResponse(

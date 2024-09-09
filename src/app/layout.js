@@ -1,5 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/contexts/auth";
+import Auth from "@/app/components/Auth.jsx";
+import Navbar from "./components/Navbar";
+
+// import { usePathname } from "next/navigation";
+
+//Everything in LAYOUT will be shown at all pages.
+//Navbar, logout, banners, footer.
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +19,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main>
+          <AuthProvider>
+            {/* allt i layout syns på ALLA sidor */}
+            {/* {pathname === "/login" && <Auth />} */}
+            <Navbar />
+            <Auth />
+            {children}
+            {/* children är min page */}
+          </AuthProvider>
+        </main>
+      </body>
     </html>
   );
 }
