@@ -65,7 +65,7 @@ const Model = ({ item, setEdit, onItemChange }) => {
           <input
             defaultValue={item.category}
             type="text"
-            className="flex-1 text-start p-2 border-gray-600 border-r"
+            className="flex-1 text-start p-2 border-gray-600"
             onChange={(e) => setCategory(e.target.value)}
           />
 
@@ -84,12 +84,12 @@ const Model = ({ item, setEdit, onItemChange }) => {
             <button
               id={item.id}
               onClick={handleSave}
-              className="bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-24 bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Save
             </button>
             <button
-              className="bg-red-600 text-white px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-24 bg-red-600 text-white px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={handleClose}
             >
               {}Close

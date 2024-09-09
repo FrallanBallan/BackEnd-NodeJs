@@ -69,7 +69,7 @@ const Form = ({ onItemChange }) => {
           </div>
         </div>
         <div className="flex-1 flex flex-col gap-2">
-          <label className="text-start border" htmlFor="description">
+          <label className="text-start" htmlFor="description">
             Description:
           </label>
           <textarea
@@ -82,25 +82,25 @@ const Form = ({ onItemChange }) => {
         </div>
       </div>
 
-      {/* <div className="w-72"> */}
       <div className="flex gap-2 mb-4  align-stretch justify-between">
         <button
           onSubmit={handleSubmit}
-          className="flex-1 bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
+          className=" w-72 bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
         >
           Add item
         </button>
-        <select name="" id="1">
-          <option value="">Name</option>
-        </select>
-        <select name="" id="2">
-          <option value="">Quantity</option>
-        </select>
-        <select name="" id="3">
-          <option value="">Category</option>
-        </select>
+        <div className="flex gap-2 ">
+          <select name="" id="1" className="border border-black">
+            <option value="">Name</option>
+          </select>
+          <select name="" id="2" className="border border-black">
+            <option value="">Quantity</option>
+          </select>
+          <select name="" id="3" className="border border-black">
+            <option value="">Category</option>
+          </select>
+        </div>
       </div>
-      {/* </div> */}
     </form>
   );
 };

@@ -9,7 +9,7 @@ const List = () => {
   return (
     <>
       <Form onItemChange={fetchItems} />
-      <div className="w-full ">
+      <div className="w-full mt-6">
         <ul>
           <div className="flex items-center justify-between w-full mb-4 bg-white  ">
             <p className="flex-1 text-start border border-gray-600 border-r p-2">

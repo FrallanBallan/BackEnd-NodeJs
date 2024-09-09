@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main>
+        <main className="bg-gray-200">
           <AuthProvider>
             {/* allt i layout syns på ALLA sidor */}
             {/* {pathname === "/login" && <Auth />} */}
