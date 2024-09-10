@@ -19,7 +19,7 @@ const Auth = () => {
     try {
       if (isRegister) {
         const name = e.target[2].value;
-        auth.actions.register(email, password, name);
+        auth.actions.register(email, name, password);
       } else {
         auth.actions.login(email, password);
         setError(error.message || "Wrong username or password!");
@@ -50,14 +50,14 @@ const Auth = () => {
       >
         {isRegister && (
           <input
-            type="text"
-            placeholder="Name"
+            type="email"
+            placeholder="Email"
             className="p-2 m-2 border border-gray-300 rounded-md"
           />
         )}
         <input
-          type="email"
-          placeholder="Email"
+          type="text"
+          placeholder="Name"
           className="p-2 m-2 border border-gray-300 rounded-md"
         />
         <input

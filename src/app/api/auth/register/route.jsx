@@ -23,14 +23,15 @@ export const POST = async (req, options) => {
 
   const user = await prisma.user.create({
     data: {
+      name,
       email,
       password: hashedPassword,
-      name,
     },
   });
   //This might need to be implemented in post. cant post with middleware
   const token = await jwt.signJWT({ userId: user.id, email: user.email });
   // const token = await jwt.signJWT({user: user.id})
+  console.log(user);
   return NextResponse.json({
     token,
     user,

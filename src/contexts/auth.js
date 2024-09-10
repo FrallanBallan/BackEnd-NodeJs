@@ -6,8 +6,8 @@ import LocalStorageKit from "@/utils/localStorageKit";
 const defaultValue = {
   user: {
     id: "",
-    email: "",
     name: "",
+    email: "",
     createdAt: "",
     updatedAt: "",
   },
@@ -109,6 +109,8 @@ const AuthProvider = ({ children }) => {
       }
 
       const data = await res.json();
+      console.log(data);
+
       setToken(data.token);
       setUser(data.user);
       LocalStorageKit.setToken(data.token);
