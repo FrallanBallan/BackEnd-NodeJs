@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <main className=" flex min-h-screen flex-col items-center justify-between p-12">
+      <main className=" flex min-h-screen flex-col items-center justify-between p-12 mr-20 ml-20">
         {/* Auth till page */}
         {/* på page syns bara en sida */}
         {/* lägg komponenter */}

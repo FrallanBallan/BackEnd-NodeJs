@@ -44,6 +44,7 @@ const Model = ({ item, setEdit, onItemChange }) => {
     } catch (error) {
       console.log(error, "problem editing body");
     }
+    setEdit(false);
   };
 
   return (
@@ -64,6 +65,11 @@ const Model = ({ item, setEdit, onItemChange }) => {
           />
           <input
             defaultValue={item.category}
+            type="text"
+            className="flex-1 text-start p-2 border-gray-600"
+            onChange={(e) => setCategory(e.target.value)}
+          />
+          <input
             type="text"
             className="flex-1 text-start p-2 border-gray-600"
             onChange={(e) => setCategory(e.target.value)}

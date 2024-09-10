@@ -30,7 +30,7 @@ export const GET = async (req, { params }) => {
 export const PUT = async (req, { params }) => {
   //Todo get the body when "update" is pressed and read the values
   const { id } = params;
-  const { name, quantity, description, category } = await req.json();
+  const { name, quantity, description, category, inStock } = await req.json();
 
   try {
     const updatedItem = await prisma.item.update({
@@ -41,6 +41,7 @@ export const PUT = async (req, { params }) => {
         quantity,
         description,
         category,
+        inStock: Number(quantity) > 0,
       },
     });
     return NextResponse.json({ updatedItem });

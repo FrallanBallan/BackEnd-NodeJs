@@ -22,3 +22,15 @@ const useItems = () => {
 };
 
 export default useItems;
+
+//  // Extract unique categories
+//       const uniqueCategories = [...new Set(data.map(item => item.category))];
+//       setCategories(uniqueCategories);
+
+//       // Extract unique quantities
+//       const uniqueQuantities = [...new Set(data.map(item => item.quantity))];
+//       setQuantities(uniqueQuantities);
+
+//       // Extract stock statuses
+//       const stockStatuses = [...new Set(data.map(item => (item.inStock ? "In Stock" : "Out of Stock")))];
+//       setStockStatuses(stockStatuses);

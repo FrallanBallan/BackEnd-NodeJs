@@ -11,9 +11,6 @@ export const GET = async (req) => {
 
   const search = searchParams.get("search");
 
-  //TODO Add radio buttons for category choice and chosen value goes into url dynamicly
-  //TODO Add posiblity for muliple search
-
   if (search) {
     //TRY
     try {

@@ -54,13 +54,7 @@ const Item = ({
   const handleCloseEdit = () => {
     setEdit(false);
   };
-  // try {
-  //   const response = await fetch(`/api/items${id}`, {
-  //     method: "PUT",
-  //   });
-  // } catch (error) {
-  //   console.log("Error updating with PUT", error);
-  // }
+
   return (
     <>
       {!edit ? (

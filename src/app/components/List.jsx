@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from "react";
 import Item from "./Item";
 import Form from "./Form";
 import useItems from "../hooks/useItem";
+import FilterBar from "./FilterBar";
+import { useEffect, useState } from "react";
 
 const List = () => {
   const { items, fetchItems } = useItems();
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const handleFilterChange = (filterList) => {
+    setFilteredItems(filterList);
+    console.log("Fitlered items from FilterBar", filterList);
+  };
 
   return (
     <>
       <Form onItemChange={fetchItems} />
+      <FilterBar items={items} onFilterChange={handleFilterChange} />
       <div className="w-full mt-6">
         <ul>
           <div className="flex items-center justify-between w-full mb-4 bg-white  ">
@@ -25,16 +33,14 @@ const List = () => {
               Availability
             </p>
           </div>
-          {items.map((item) => (
-            <Item
-              key={item.id}
-              // name={item.name}
-              // description={item.description}
-              // quantity={item.quantity}
-              {...item}
-              onItemChange={fetchItems}
-            />
-          ))}
+          {/* Render Items */}
+          {filteredItems.length > 0
+            ? filteredItems.map((item) => (
+                <Item key={item.id} onItemChange={fetchItems} {...item} />
+              ))
+            : items.map((item) => (
+                <Item key={item.id} onItemChange={fetchItems} {...item} />
+              ))}
         </ul>
       </div>
     </>
