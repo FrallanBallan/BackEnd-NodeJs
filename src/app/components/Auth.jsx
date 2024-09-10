@@ -9,16 +9,23 @@ const Auth = () => {
   const router = useRouter();
 
   const [isRegister, setIsRegister] = useState(true);
+  const [error, setError] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    if (isRegister) {
-      const name = e.target[2].value;
-      auth.actions.register(email, password, name);
-    } else {
-      auth.actions.login(email, password);
+
+    try {
+      if (isRegister) {
+        const name = e.target[2].value;
+        auth.actions.register(email, password, name);
+      } else {
+        auth.actions.login(email, password);
+        setError(error.message || "Wrong username or password!");
+      }
+    } catch (error) {
+      setError(error.message || "Wrong username or password!");
     }
   };
   useEffect(() => {
@@ -71,6 +78,8 @@ const Auth = () => {
         >
           {isRegister ? "Already have a Account?" : "Create new Account"}
         </button>
+        {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+        {/* Display error */}
       </form>
     </div>
   );

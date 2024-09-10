@@ -45,6 +45,7 @@ const Form = ({ onItemChange }) => {
           <label htmlFor="item-name">Name:</label>
           <div className="flex flex-col">
             <input
+              required
               className="p-2 border border-black"
               id="item-name"
               name="item-name"
@@ -53,6 +54,7 @@ const Form = ({ onItemChange }) => {
             />
             <label htmlFor="quantity">Quantity:</label>
             <input
+              required
               className="p-2 border border border-black"
               id="quantity"
               name="quantity"
@@ -61,6 +63,7 @@ const Form = ({ onItemChange }) => {
             />
             <label htmlFor="category">Category:</label>
             <input
+              required
               className="p-2 border border-black"
               id="category"
               name="category"
@@ -74,6 +77,7 @@ const Form = ({ onItemChange }) => {
             Description:
           </label>
           <textarea
+            required
             className="h-full p-2 placeholder:text-start placeholder:align-text-top resize-none border border-black"
             id="description"
             name="description"

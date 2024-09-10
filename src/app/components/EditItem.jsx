@@ -49,60 +49,65 @@ const Model = ({ item, setEdit, onItemChange }) => {
 
   return (
     <>
-      <div className="mb-2 border border-gray-600">
-        <div className="flex items-center  w-full border-gray-600 border-b ">
-          <input
-            defaultValue={item.name}
-            type="text"
-            className="flex-1 text-start p-2 border-gray-600 border-r"
-            onChange={(e) => setNewName(e.target.value)}
-          />
-          <input
-            defaultValue={item.quantity}
-            type="text"
-            className="flex-1 text-start p-2 border-gray-600 border-r"
-            onChange={(e) => setQuantity(e.target.value)}
-          />
-          <input
-            defaultValue={item.category}
-            type="text"
-            className="flex-1 text-start p-2 border-gray-600"
-            onChange={(e) => setCategory(e.target.value)}
-          />
-          <input
-            type="text"
-            className="flex-1 text-start p-2 border-gray-600"
-            onChange={(e) => setCategory(e.target.value)}
-          />
-
-          {/* <p className="flex-1 text-start p-2 border-gray-600 ">
-            {item.inStock ? "In Stock" : "Out of Stock"}
-          </p> */}
-        </div>
-        <div className=" flex justify-between ">
-          <textarea
-            className="flex-1 text-start p-2 resize-none w-full"
-            rows={1}
-            defaultValue={item.description}
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
-          <div className="flex p-1 gap-2 ">
-            <button
-              id={item.id}
-              onClick={handleSave}
-              className="w-24 bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Save
-            </button>
-            <button
-              className="w-24 bg-red-600 text-white px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-              onClick={handleClose}
-            >
-              {}Close
-            </button>
+      <form>
+        <div className="mb-2 border border-gray-600">
+          <div className="flex items-center  w-full border-gray-600 border-b ">
+            <input
+              required
+              defaultValue={item.name}
+              type="text"
+              className="flex-1 text-start p-2 border-gray-600 border-r"
+              onChange={(e) => setNewName(e.target.value)}
+            />
+            <input
+              required
+              defaultValue={item.quantity}
+              type="text"
+              className="flex-1 text-start p-2 border-gray-600 border-r"
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+            <input
+              required
+              defaultValue={item.category}
+              type="text"
+              className="flex-1 text-start p-2 border-gray-600"
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            <input
+              type="text"
+              className="flex-1 text-start p-2 border-gray-600"
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            {/* <p className="flex-1 text-start p-2 border-gray-600 ">
+              {item.inStock ? "In Stock" : "Out of Stock"}
+            </p> */}
+          </div>
+          <div className=" flex justify-between ">
+            <textarea
+              required
+              className="flex-1 text-start p-2 resize-none w-full"
+              rows={1}
+              defaultValue={item.description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+            <div className="flex p-1 gap-2 ">
+              <button
+                id={item.id}
+                onClick={handleSave}
+                className="w-24 bg-blue-600 text-white px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Save
+              </button>
+              <button
+                className="w-24 bg-red-600 text-white px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                onClick={handleClose}
+              >
+                {}Close
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };
