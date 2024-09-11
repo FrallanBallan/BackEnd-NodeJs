@@ -50,33 +50,32 @@ const Model = ({ item, setEdit, onItemChange }) => {
   return (
     <>
       <form>
-        <div className="mb-2 border border-gray-600">
-          <div className="flex items-center  w-full border-gray-600 border-b ">
+        <div className="mb-2 border border-gray-600 box-border">
+          <div className="flex items-center w-full border-gray-600 border-b overflow-hidden ">
             <input
               required
               defaultValue={item.name}
               type="text"
-              className="flex-1 text-start p-2 border-gray-600 border-r"
+              className="flex-1 text-start p-2 border-gray-600 border-r box-border"
               onChange={(e) => setNewName(e.target.value)}
             />
             <input
               required
               defaultValue={item.quantity}
               type="text"
-              className="flex-1 text-start p-2 border-gray-600 border-r"
+              className="flex-1 text-start p-2 border-gray-600 border-r box-border"
               onChange={(e) => setQuantity(e.target.value)}
             />
             <input
               required
               defaultValue={item.category}
               type="text"
-              className="flex-1 text-start p-2 border-gray-600"
+              className="flex-1 text-start p-2 border-gray-600 box-border"
               onChange={(e) => setCategory(e.target.value)}
             />
             <input
               type="text"
-              className="flex-1 text-start p-2 border-gray-600"
-              onChange={(e) => setCategory(e.target.value)}
+              className="flex-1 text-start p-2 border-gray-600 box-border"
             />
             {/* <p className="flex-1 text-start p-2 border-gray-600 ">
               {item.inStock ? "In Stock" : "Out of Stock"}

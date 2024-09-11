@@ -14,6 +14,7 @@ const FilterBar = ({ items, onFilterChange }) => {
         ? item.category === selectedCategory
         : true;
       const stockMatch = isInStock ? item.inStock === true : true;
+      //Om man skapar ny citrus out of stock funkar inte filtrering
 
       return categoryMatch && stockMatch;
     });

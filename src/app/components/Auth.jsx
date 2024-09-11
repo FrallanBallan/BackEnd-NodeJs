@@ -1,5 +1,5 @@
 "use client";
-import { Router, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const { useAuth } = require("@/contexts/auth");
 const { useState, useEffect } = require("react");
