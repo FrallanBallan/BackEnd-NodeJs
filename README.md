@@ -40,7 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Inloggning:
 
 `app/components/Auth.jsx: `
-Använder mig av useRouter och useAuth. UseRouter tillåter mig att redirecta i app. useAuth tar med autenziering via auth.js
+Använder mig av useRouter och useAuth. UseRouter tillåter mig att redirecta i app. useAuth tar med autentisering via auth.js
 
 useState kollar om isRegistered är true eller false
 Om isLoggedIn är true redirectas anvädaren till home page
@@ -49,7 +49,7 @@ Om isLoggedIn redan är inloggad returneras null som ser till att inga andra kom
 `app/context/auth.js:`
 AuthProvider
 user: Data om den inloggade
-token: Sparar autenzieringsnyckel
+token: Sparar autentiseringsnyckel
 isLoggedIn: håller koll om användaren är inloggad eller ej
 
 /Actions/
@@ -67,7 +67,7 @@ logout: återstället user, token och sätter isLoggedIn till (false)
 Tack vare AuthContext.Provider som wrappar appen och kan i sin tur dela med sig av datan till allt som ligger innanför.
 komponenterna, dess {children} har nu tillgång till user, token och isLoggedIn (action: login, register, logout)
 
-useAuth() kan nu användas överallt och autenziering finns där med tillgängligt.
+useAuth() kan nu användas överallt och autentisering finns där med tillgängligt.
 
 ## Skapandet av ett item
 
